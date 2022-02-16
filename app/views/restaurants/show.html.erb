@@ -1,0 +1,17 @@
+<div class="d-flex flex-column align-items-center" >
+  <h1><%= @restaurant.name %></h1>
+  <h3><%= @restaurant.address %></h3>
+
+  <div class="restaurant-name">
+    <p>Category: <%= @restaurant.category %></p>
+    <p>Phone number: <%= @restaurant.phone_number %></p>
+  </div>
+
+  <ul>
+    <% @restaurant.reviews.each do |review|%>
+      <li><%= review.content %></li>
+      <% end %>
+  </ul>
+</div>
+
+<%= link_to 'previous page',  restaurants_path, class: 'btn btn-primary' %>
